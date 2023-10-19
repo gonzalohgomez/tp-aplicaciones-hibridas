@@ -5,6 +5,7 @@ async function actualizarSolicitud(body, id){
         $set:{
             cantJugador: body.cantJugador,
             fecha: body.fecha,
+            deporte: body.deporte,
             horario: body.horario,
             lugar: body.lugar,
             precio: body.precio
@@ -14,15 +15,18 @@ async function actualizarSolicitud(body, id){
 }
 
 async function listarBusquedasActivas() {
-    let busquedas = await FaltaUno.find().sort({lugar: 1})
-        .populate('deporte', 'nombre -_id')
+    // let busquedas = await FaltaUno.find().sort({lugar: 1})
+    //     .populate('deporte', 'nombre -_id')
 
-    return busquedas;
+    // return busquedas;
+    let deportes = await Deporte.find().sort({email: 1});
+    return deportes;
 }
 
 async function crearBusqueda(body){
     let busqueda = new FaltaUno({
         cantJugador       : body.cantJugador,
+        deporte : body.deporte,
         fecha  : body.fecha,
         horario       : body.horario,
         lugar  : body.lugar,

@@ -12,9 +12,13 @@ const faltaUnoSchema = new mongoose.Schema({
         type:Number,
         required: true
     },
+    // deporte: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'deporte'
+    // }, //no sepudooo
     deporte: {
-        type: Schema.Types.ObjectId,
-        ref: 'deporte'
+        type: String,
+        required: true
     },
     fecha: {//2023-10-25T22:46:06.630Z
         type:Date,
@@ -33,10 +37,6 @@ const faltaUnoSchema = new mongoose.Schema({
         type: Number,
         required: false        
     },
-    // profe: [profeSchema]
-    // profe: {
-    //     type: Schema.Types.ObjectId, ref: "Usuarios"
-    // }
 });
 
 export default mongoose.model('faltaUno', faltaUnoSchema);
