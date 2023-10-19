@@ -8,9 +8,9 @@ ruta.get('/', verificarToken, getUsuarioController);
 ruta.get('/paginacion', verificarToken , getUsuarioPaginadoController);
 ruta.get('/id/:id', verificarToken, usuarioFilterByIDController);
 ruta.get('/nombre/:nombre', verificarToken, usuarioFilterByNameController);
-ruta.post('/', verificarToken, createUsuarioController);
-ruta.put('/:email', verificarToken, updateUsuariobyEmailController)
-ruta.delete('/:id', verificarToken, deleteUsuariobyIDController)
+ruta.post('/', createUsuarioController);
+ruta.put('/:email', verificarToken, updateUsuariobyEmailController);
+ruta.delete('/:id', verificarToken, deleteUsuariobyIDController);
 
 
 export default ruta;

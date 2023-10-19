@@ -16,7 +16,7 @@ const faltaUnoSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'deporte'
     },
-    fecha: {
+    fecha: {//2023-10-25T22:46:06.630Z
         type:Date,
         required:true,
         default: Date.now
