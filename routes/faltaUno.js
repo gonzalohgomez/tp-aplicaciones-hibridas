@@ -8,7 +8,7 @@ ruta.get('/', verificarToken, getFaltaUnoController);
 ruta.get('/paginacion', verificarToken , getFaltaUnoPaginadoController);
 ruta.get('/id/:id', verificarToken, faltaUnoFilterByIDController);
 ruta.get('/lugar/:lugar', verificarToken, faltaUnoFilterByLugarController);
-ruta.post('/', createFaltaUnoController);
+ruta.post('/', verificarToken, createFaltaUnoController);
 ruta.put('/:id', verificarToken, updateFaltaUnoController);
 ruta.delete('/:id', verificarToken, deleteFaltaUnobyIDController);
 
